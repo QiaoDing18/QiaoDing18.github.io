@@ -53,15 +53,15 @@
 
 <meta name="keywords" content="">
 
-<meta name="description " content="">
+<meta name="description " content="了解第三方认证时候用到了token，系统的总结一下">
 </head>
 <body>
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="丁">丁</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
         <!-- custom single page of menus -->
         
         
@@ -106,13 +106,25 @@
 
 
         
-        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
         <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -130,11 +142,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -161,12 +173,11 @@
             </div>
             <h2 class="post-title">Token</h2>
             <div class="post-meta">
-                本文总共1269个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共1268个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p><img src="http://t11.baidu.com/it/u=2174694445,548259498&amp;fm=173&amp;s=587221C408A8331F503F8C9F0300409B&amp;w=640&amp;h=334&amp;img.JPEG" alt=""></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>token意思是“令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。</p>
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>token意思是“令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。</p>
 <p>用户第一次登录，服务器生成一个token并将此token返回给客户端，以后客户端只需带上这个token前来请求数据即可，无需再次带上用户名和密码</p>
 <p><strong>toke组成：</strong><br>    <em>uid（用户唯一的身份标识）</em><br>    <em>time（当前时间的时间戳）</em><br>    <em>sign（签名，token的前几位以哈希算法压缩成的一定长度的十六进制字符串。为防止token泄露）</em></p>
 <p>token在服务端不需要存储用户的登录记录，流程：<br>1、客户端使用用户名和密码请求登录<br>2、服务端收到请求，验证用户名和密码<br>3、验证成功后，<em>服务端会生成一个token</em>，然后把这个token发送给客户端<br>4、<em>客户端收到token后把他存储起来</em>，可以放在cookie或者LocalStroage里<br>5、客户端每次向服务器请求时都需要带上服务器发给的token<br>6、服务端收到请求，然后去验证客户端请求里面带着token，如果验证成功，就向客户端返回请求的数据</p>
@@ -185,7 +196,7 @@
             </a>
         </div>
         
-        <div class="post-tags">标签：
+        <div class="post-tags">Tags：
             
             <a href="/tags/web/">前端</a>
             
@@ -203,7 +214,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
