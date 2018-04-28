@@ -59,9 +59,9 @@
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="丁">丁</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
-        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
-        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
         <!-- custom single page of menus -->
         
         
@@ -103,14 +103,28 @@
             <div class="page-title">
     <ul>
         <li><a href="/">最新</a></li>
+
+
         
-        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <label for="s" class="sr-only">请输入关键字</label>
         <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
-        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -128,11 +142,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -159,12 +173,11 @@
             </div>
             <h2 class="post-title">聊聊Dreamweaver</h2>
             <div class="post-meta">
-                本文总共1260个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共1259个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1524899239433&amp;di=f2edb47d8f50dbf88fce8e0c21fc4e70&amp;imgtype=0&amp;src=http%3A%2F%2Fs10.sinaimg.cn%2Fbmiddle%2F003uGW2cgy6EQ2z1HE549%26690" alt=""></p>
-<p>当你看到这张图时会想起这款Adobe家族中最绿的那个Dreamweaver老弟吗</p>
+            <p>当你看到这张图时会想起这款Adobe家族中最绿的那个Dreamweaver老弟吗<br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525533645&di=f4766fac3f58286d9b46d76e04c2f463&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.sjk8.com%2Fyx%2Fzl%2F807593419-14.jpg"></p>
 <p>如今的Web开发者可能对于DW的印象只是一个陈旧的老古董软件，与如今日新月异的Web发展完全跟不上。</p>
 <p>在十年之前，你不认识我我不认识你的时候DW有一个美妙的中文名称：“梦想编织者”<br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1524900921618&amp;di=4880251d94f67875c6ab840396e874ee&amp;imgtype=0&amp;src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fexp%2Fw%3D480%2Fsign%3D6c7c3c335fee3d6d22c686c373176d41%2Fd439b6003af33a87d4112f8ec05c10385343b521.jpg" alt=""></p>
 <p>Adobe Dreamweaver，简称“DW”，是美国MACROMEDIA公司开发的集网页制作和管理网站于一身的所见即所得网页编辑器，DW是第一套针对专业网页设计师特别发展的视觉化网页开发工具，利用它可以轻而易举地制作出跨越平台限制和跨越浏览器限制的充满动感的网页。</p>
@@ -190,13 +203,13 @@
             </a>
         </div>
         
-        <div class="post-tags">Tags：
+        <div class="post-tags">标签：
+            
+            <a href="/tags/chat/">闲聊</a>
             
         </div>
         
     </article>
-    
-    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
     
     
 </div>
@@ -206,7 +219,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
