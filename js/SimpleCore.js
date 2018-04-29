@@ -34,7 +34,7 @@ var SimpleCore = {
         $(document).on('click', '.btn-sns-qr', function (e) {
             e.preventDefault();
             if (SimpleCore.snsQRCode != '') {
-                SimpleCore.alert('来不及解释了赶紧上车','<img style="width:180px;background:#fff;" src="' + SimpleCore.snsQRCode + '">');
+                SimpleCore.alert('生活已经如此的艰难','<img style="width:180px;background:#fff;" src="http://p7wm7amg2.bkt.clouddn.com/code.png">');
             } else {
                 SimpleCore.alert('未开通自定义功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
@@ -42,7 +42,7 @@ var SimpleCore = {
         $(document).on('click', '.btn-thumbs-up', function (e) {
             e.preventDefault();
             if (SimpleCore.donateImg != '') {
-                SimpleCore.alert('生活已经如此的艰难','<img style="width:180px;background:#fff;" src="' + SimpleCore.donateImg + '">');
+                SimpleCore.alert('生活已经如此的艰难','<img style="width:180px;background:#fff;" src="http://p7wm7amg2.bkt.clouddn.com/code.png">');
             } else {
                 SimpleCore.alert('还没准备好嘞~','<h4 style="text-align: center;margin: 0">嘿嘿）</h4>');
             }
