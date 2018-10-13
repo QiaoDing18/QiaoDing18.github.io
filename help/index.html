@@ -49,11 +49,11 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>vue 1.x升级相关问题2.0 - QiaoDing Blog</title>
+<title>记录一些小问题 - QiaoDing Blog</title>
 
 <meta name="keywords" content="">
 
-<meta name="description " content="Vue 1.x升级相关问题2.0">
+<meta name="description " content="">
 </head>
 <body>
 <div id="nav">
@@ -102,24 +102,7 @@
 </div>
             <div class="page-title">
     <ul>
-        <li><a href="/">最新</a></li>
-
-
-        
-            
-                <li class="">
-                    <a href="/categories/web" data-name="前端">前端</a>
-                </li>
-            
-                <li class="">
-                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
-                </li>
-            
-                <li class="">
-                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
-                </li>
-            
-        
+        <li><a href="/">最近文章</a></li>
         <li class="page-search">
     <form id="search" class="search-form">
         <label for="s" class="sr-only">Input Search key Words Here</label>
@@ -167,37 +150,32 @@
                 </a>
                 <p><span class="label">作者</span>
                     <a href="" target="_blank">乔丁</a>
-                    <span title="最后编辑于2018-05-25">2018-05-25</span>
+                    <span title="最后编辑于2018-10-12">2018-10-12</span>
                 </p>
                 <p>【前端小学生】</p>
             </div>
-            <h2 class="post-title">Vue 1.x升级相关问题2.0</h2>
+            <h2 class="post-title">记录一些小问题</h2>
             <div class="post-meta">
-                本文总共1256个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共152个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p>在升级Vue 1.x项目时遇到了很多情况，小结一下</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="&#39;https://github.com/vuejs/vue-migration-helper&#39;">vue-migration-helper</a><br>在运行了vue-migration-helper之后会提供一些升级信息，根据提示信息修改相应代码</p>
-<p>总结一下改动比较多的地方</p>
-<h2 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h2><p><code>Replace :xxx.sync=&quot;ooo&quot; with :visible=&quot;ooo&quot;, then $emit an event from the child component to trigger an update to xxx in the parent</code><br>在Vue 2.3以下版本中，数据流被限制，取消了sync，来解决父组件受到子组件不必要的影响的问题。<br>解决的办法就是使用自定义事件向父组件传参<br>Vue 2.3中sync配合v-bind使用，被扩展成为一个自动更新父组件属性的v-on监听器</p>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="http://p7wm7amg2.bkt.clouddn.com/vuediff.png" alt=""></p>
-<p>主要的ready向mounted这两个钩子函数的转变。<br>1.x中的compiled感觉意义并不大</p>
-<h2 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h2><p>Vue 2.x中废弃掉了之前的transition属性，使用transition标签，并指定name属性实现效果</p>
-<p>而且在Vue 2.x中的transition的钩子函数可以在methods中调用，废弃了之前的全局Vue.transition方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Vue 1.x</span></span><br><span class="line">Vue.transition(<span class="string">'xxx'</span>, &#123;</span><br><span class="line">	beforeEnter: <span class="function"><span class="keyword">function</span>(<span class="params"> </span>)</span>&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;,</span><br><span class="line">	enter: <span class="function"><span class="keyword">function</span>(<span class="params"> </span>)</span>&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	...</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// Vue 2.x</span></span><br><span class="line">methods: &#123;</span><br><span class="line">	beforeEnter( )&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	enter( )&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>在Vue 2.x中不再提供内置过滤器，需要引入外部库，比如moment.js来计算时间<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Vue 1.x</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; item.appDate | date 'yyyy-MM-dd' &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// Vue 2.x</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; item.appDate | date('yyyy-MM-dd') &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h2><ul>
-<li>router.go() 改为 router.push()</li>
-<li>router.map()被routes数组取代</li>
-<li>router-link 改为 v-link</li>
-<li>route.refresh 改为 route.meta.refresh</li>
-</ul>
-<h2 id="其他改动"><a href="#其他改动" class="headerlink" title="其他改动"></a>其他改动</h2><ul>
-<li>v-for中废弃了$index</li>
-<li>{ { { xxoo } } } 改为 v-html</li>
-<li>v-el 和 v-ref 合并成ref属性</li>
-</ul>
-
+            <h2 id="Q：我在哪？"><a href="#Q：我在哪？" class="headerlink" title="Q：我在哪？"></a>Q：我在哪？</h2><blockquote>
+<p>西安邮电大学 移动应用开发(3G)实验室</p>
+</blockquote>
+<h2 id="Q：我之前呢？"><a href="#Q：我之前呢？" class="headerlink" title="Q：我之前呢？"></a>Q：我之前呢？</h2><blockquote>
+<p>西电科大附中 - 西工大初中 - 西工大附小 - 西工大幼稚园</p>
+</blockquote>
+<h2 id="Q：这个是干啥用的？"><a href="#Q：这个是干啥用的？" class="headerlink" title="Q：这个是干啥用的？"></a>Q：这个是干啥用的？</h2><blockquote>
+<p>装逼</p>
+</blockquote>
+<h2 id="Q：你做什么"><a href="#Q：你做什么" class="headerlink" title="Q：你做什么"></a>Q：你做什么</h2><blockquote>
+<p>会一些前端，Vue.js用的比较多</p>
+</blockquote>
+<h2 id="Q：给你100W想干什么"><a href="#Q：给你100W想干什么" class="headerlink" title="Q：给你100W想干什么"></a>Q：给你100W想干什么</h2><blockquote>
+<p>摇的上号就付首付，摇不上就捐给实验室</p>
+</blockquote>
+<h4 id="以上纯属胡说八道"><a href="#以上纯属胡说八道" class="headerlink" title="以上纯属胡说八道"></a>以上纯属胡说八道</h4>
         </div>
         <div class="post-tool">
             <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
@@ -205,15 +183,7 @@
             </a>
         </div>
         
-        <div class="post-tags">Tags：
-            
-            <a href="/tags/web/">前端</a>
-            
-        </div>
-        
     </article>
-    
-    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
     
     
 </div>

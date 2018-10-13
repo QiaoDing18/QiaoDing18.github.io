@@ -49,7 +49,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>cdn相关 - QiaoDing Blog</title>
+<title>标签云 - QiaoDing Blog</title>
 
 <meta name="keywords" content="">
 
@@ -102,24 +102,8 @@
 </div>
             <div class="page-title">
     <ul>
-        <li><a href="/">最新</a></li>
-
-
-        
-            
-                <li class="">
-                    <a href="/categories/web" data-name="前端">前端</a>
-                </li>
-            
-                <li class="">
-                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
-                </li>
-            
-                <li class="">
-                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
-                </li>
-            
-        
+        <li><a href="/" data-name="Home" title="Back Home">主页</a></li>
+        <li><a href="/archives" data-name="Archives" title="Archives">归档</a></li>
         <li class="page-search">
     <form id="search" class="search-form">
         <label for="s" class="sr-only">Input Search key Words Here</label>
@@ -161,48 +145,23 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <div class="post-author clearfix">
-                <a class="avatar fleft" href="" target="_blank">
-                    <img width="48" src="/images/favicon.png" alt="avatar"/>
-                </a>
-                <p><span class="label">作者</span>
-                    <a href="" target="_blank">乔丁</a>
-                    <span title="最后编辑于2018-04-27">2018-04-27</span>
-                </p>
-                <p>【前端小学生】</p>
-            </div>
-            <h2 class="post-title">CDN相关</h2>
-            <div class="post-meta">
-                本文总共857个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
-            </div>
+            <h3 class="post-title">目前共计3类标签</h3>
         </div>
-        <div class="post-content markdown-body">
-            <h2 id="CDN访问流程"><a href="#CDN访问流程" class="headerlink" title="CDN访问流程"></a>CDN访问流程</h2><p>1、用户向浏览器输入xxx.com这个域名，浏览器第一次发现本地没有DNS缓存，则向网站的DNS服务器请求<br>2、网站的DNS域名解析器设置了CNAME，指向了xxxcdn.com，请求指向了CDN网络中的智能DNS负载均衡系统<br>3、智能DNS负载均衡系统解析域名，把对用户响应速度最快的IP节点返回给用户<br>4、用户向该IP节点（CDN服务器）发出请求<br>5、由于是第一次访问，CDN服务器会向原web站点请求，并缓存内容<br>6、请求结果发给用户</p>
-<h2 id="CDN原理"><a href="#CDN原理" class="headerlink" title="CDN原理"></a>CDN原理</h2><p>CDN网络是在用户和服务器之间增加Cache层，将用户的请求引导到Cache上获得源服务器的数据主要是通过接管DNS实现</p>
-<p>1、当用户访问加入CDN服务的网站时，域名解析请求将最终交给<strong>全局负载均衡DNS进行处理</strong>。<br>2、全局负载均衡DNS通过一组预先定义好的策略，<strong>将当时最接近用户的节点地址提供给用户，使用户能够得到快速的服务</strong>。<br>3、同时，还与分布在世界各地的所有CDN节点保持通信，搜集各节点的通信状态，<strong>确保不将用户的请求分配到不可用的CDN节点上</strong>，实际上是通过DNS做全局负载均衡<br>4、每个CDN节点由两部分组成：负载均衡设备、高速缓存服务器</p>
-<p>负载均衡设备负责每个节点中各个Cache的负载均衡，保证节点的工作效率<br>负载均衡设备还负责收集节点与周围环境的信息，保持与负载DNS的通信，实现整个系统的负载均衡。<br>CDN的管理系统是整个系统能够正常运转的保证。不仅能对系统中的各个子系统和设备进行实时监控，对各种故障产生相应的警告，还可以实时检测到系统中总的流量和各个节点的流量，并保存在系统的数据库中，使网管人员能够方便的进行进一步分析</p>
-<p>理论上，最简单的CDN网络有一个负责全局负载均衡的DNS和各节点的一台Cache，即可运行。DNS支持根据用户源IP地址解析不同的IP，实现就近访问。为了保证高可用性，需要监视各节点的流量、健康状态等。一个节点的单台Cache承载数量不够时，才需要多台Cache，多台Cache同时工作，才需要负载均衡器，使Cache群协同工作。</p>
-
+        <p><img style="width:400px" src="/images/tags-bg.jpg" alt="tags-bg"></p> 
+        <div class="post-content markdown-body" itemprop="articleBody">
+            <ul class="tag-list">
+                
+                <li><a href="/tags/web/">前端(43)</a></li>
+                
+                <li><a href="/tags/net/">计算机网络(7)</a></li>
+                
+                <li><a href="/tags/chat/">闲聊(9)</a></li>
+                
+            </ul>
         </div>
-        <div class="post-tool">
-            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
-            </a>
-        </div>
-        
-        <div class="post-tags">Tags：
-            
-            <a href="/tags/net/">计算机网络</a>
-            
-        </div>
-        
     </article>
-    
-    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
-    
-    
-</div>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div><!-- end #main-->
+
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
