@@ -177,7 +177,7 @@
             </div>
         </div>
         <div class="post-content markdown-body">
-            <h1 id="Egg-js是什么"><a href="#Egg-js是什么" class="headerlink" title="Egg.js是什么"></a>Egg.js是什么</h1><p><strong>Egg.js为企业级框架和应用而生</strong></p>
+            <h2 id="Egg-js是什么"><a href="#Egg-js是什么" class="headerlink" title="Egg.js是什么"></a>Egg.js是什么</h2><p><strong>Egg.js为企业级框架和应用而生</strong></p>
 <h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><p>Egg 的插件机制有很高的可扩展性，一个插件只做一件事（比如 Nunjucks 模板封装成了 egg-view-nunjucks、MySQL 数据库封装成了 egg-mysql）。Egg 通过框架聚合这些插件，并根据自己的业务场景定制配置，这样应用的开发成本就变得很低。</p>
 <p>Egg 奉行『约定优于配置』，按照一套统一的约定进行应用开发，团队内部采用这种方式可以减少开发人员的学习成本，开发人员不再是『钉子』，可以流动起来。没有约定的团队，沟通成本是非常高的，比如有人会按目录分栈而其他人按目录分功能，开发者认知不一致很容易犯错。但约定不等于扩展性差，相反 Egg 有很高的扩展性，可以按照团队的约定定制框架。使用 Loader 可以让框架根据不同环境定义默认配置，还可以覆盖 Egg 的默认约定。</p>
 <h3 id="和其他框架对比"><a href="#和其他框架对比" class="headerlink" title="和其他框架对比"></a>和其他框架对比</h3><p>Express 是 Node.js 社区广泛使用的框架，简单且扩展性强，非常适合做个人项目。但框架本身缺少约定，标准的 MVC 模型会有各种千奇百怪的写法。Egg 按照约定进行开发，奉行『约定优于配置』，团队协作成本低。</p>
@@ -190,7 +190,7 @@
 <li>框架稳定，测试覆盖率高</li>
 <li>渐进式开发</li>
 </ul>
-<h1 id="Egg-js和Koa"><a href="#Egg-js和Koa" class="headerlink" title="Egg.js和Koa"></a>Egg.js和Koa</h1><h3 id="异步！"><a href="#异步！" class="headerlink" title="异步！"></a>异步！</h3><p>异步发展：callback -&gt; Promise -&gt; Generator + co -&gt; async</p>
+<h2 id="Egg-js和Koa"><a href="#Egg-js和Koa" class="headerlink" title="Egg.js和Koa"></a>Egg.js和Koa</h2><h3 id="异步！"><a href="#异步！" class="headerlink" title="异步！"></a>异步！</h3><p>异步发展：callback -&gt; Promise -&gt; Generator + co -&gt; async</p>
 <h3 id="Koa和Express"><a href="#Koa和Express" class="headerlink" title="Koa和Express"></a>Koa和Express</h3><p>Koa 和 Express 的设计风格非常类似，底层也都是共用的同一套 HTTP 基础库，但是有几个显著的区别，除了上面提到的默认异步解决方案之外，主要的特点还有下面几个。</p>
 <h4 id="Middleware"><a href="#Middleware" class="headerlink" title="Middleware"></a>Middleware</h4><p>Koa是经典的洋葱圈模型<br><img src="https://camo.githubusercontent.com/d80cf3b511ef4898bcde9a464de491fa15a50d06/68747470733a2f2f7261772e6769746875622e636f6d2f66656e676d6b322f6b6f612d67756964652f6d61737465722f6f6e696f6e2e706e67"></p>
 <p>一个收到的请求经过一个中间件的时候都会执行两次，对比Express形式的中间件，Koa的模型可以非常方便的实现后置处理逻辑。</p>
