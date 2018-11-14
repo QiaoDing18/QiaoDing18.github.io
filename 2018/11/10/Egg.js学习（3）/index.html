@@ -173,7 +173,7 @@
             </div>
             <h2 class="post-title">Egg.js学习（3）</h2>
             <div class="post-meta">
-                本文总共6738个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共7644个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -235,7 +235,14 @@
 <li>logger.error()</li>
 </ul>
 <p>在框架中提供了多个Logger对象：</p>
-<h4 id="App-Logger"><a href="#App-Logger" class="headerlink" title="App Logger"></a>App Logger</h4><p>可以通过app.logger来获取到它，如果做一些应用级别的日志记录</p>
+<h4 id="App-Logger"><a href="#App-Logger" class="headerlink" title="App Logger"></a>App Logger</h4><p>可以通过app.logger来获取到它，如果做一些应用级别的日志记录，如记录启动阶段的一些数据信息，记录一些业务上与请求无关的信息，都可以通过App Logger来完成。</p>
+<h4 id="App-CoreLogger"><a href="#App-CoreLogger" class="headerlink" title="App CoreLogger"></a>App CoreLogger</h4><p>可以通过app.coreLogger来获取到它，开发时不应该通过CoreLogger打印日志，而框架和插件则需要通过它来打印应用级别的日志，这样可以更清晰的区分应用和框架打印的日志，通过CoreLogger打印日志会放到和Logger不同的文件中。</p>
+<h4 id="Context-Logger"><a href="#Context-Logger" class="headerlink" title="Context Logger"></a>Context Logger</h4><p>可以通过ctx.logger从Context实例上获取到，从访问方式上可以看出，Context Logger一定是与请求相关的，打印的日志都会在前面上一些当前请求相关的信息，如（$userId/$ip/$traceId/${cost}ms $method $url），通过这些信息，可以从日志快速定位请求，并串联一次请求中的所有的日志。</p>
+<h4 id="Context-CoreLogger"><a href="#Context-CoreLogger" class="headerlink" title="Context CoreLogger"></a>Context CoreLogger</h4><p>可以通过ctx.coreLogger获取到，和Context Logger区别是一般只有插件和框架会通过它来记录日志。</p>
+<h4 id="Controller-Logger-amp-Service-Logger"><a href="#Controller-Logger-amp-Service-Logger" class="headerlink" title="Controller Logger &amp; Service Logger"></a>Controller Logger &amp; Service Logger</h4><p>可以在Controller和Service实例上通过this.logger获取到他们，本质上就是一个Context Logger。</p>
+<h3 id="Subscription"><a href="#Subscription" class="headerlink" title="Subscription"></a>Subscription</h3><p>订阅模型是一种比较常见的开发模式，譬如消息中间件的消费者或调度任务。因此我们提供了 Subscription 基类来规范化这个模式。</p>
+<p>可以通过以下方式来引用 Subscription 基类：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Subscription = <span class="built_in">require</span>(<span class="string">'egg'</span>).Subscription;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Schedule</span> <span class="keyword">extends</span> <span class="title">Subscription</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 需要实现此方法</span></span><br><span class="line">  <span class="comment">// subscribe 可以为 async function 或 generator function</span></span><br><span class="line">  <span class="keyword">async</span> subscribe() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>插件开发者可以根据自己的需求基于它定制订阅规范，如定时任务就是使用这种规范实现的。</p>
 
         </div>
         <div class="post-tool">
